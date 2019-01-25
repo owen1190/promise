@@ -73,7 +73,7 @@ promise.prototype.then = (onFulfilled, onRejected) => {
         } catch (error) {
           reject(error);
         }
-      });
+      },0);
     });
   }
   if (_this.status === "pending") {
@@ -153,7 +153,7 @@ promise.prototype.all = function(promises) {
     function resolveData(index, y) {
       arr[index] = y;
       //当所有promise达到成功状态，则resolve
-      if(index === arr.length - 1) {
+      if(index === promises.length - 1) {
         resolve(arr);
       }
     }
